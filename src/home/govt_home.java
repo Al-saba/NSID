@@ -5,6 +5,12 @@
 package home;
 
 import Log_IN.govt_login;
+import java.awt.HeadlessException;
+import java.sql.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+
 
 /**
  *
@@ -30,17 +36,59 @@ public class govt_home extends javax.swing.JFrame {
 
         jPanel6 = new javax.swing.JPanel();
         bg02 = new javax.swing.JLabel();
-        home_button_01 = new javax.swing.JLabel();
-        registation_button_01 = new javax.swing.JLabel();
-        bordresult_button_01 = new javax.swing.JLabel();
-        notic_button_01 = new javax.swing.JLabel();
-        logout_button_01 = new javax.swing.JLabel();
+        jToggleButton1 = new javax.swing.JToggleButton();
+        jToggleButton2 = new javax.swing.JToggleButton();
+        jToggleButton3 = new javax.swing.JToggleButton();
+        jToggleButton4 = new javax.swing.JToggleButton();
+        jToggleButton5 = new javax.swing.JToggleButton();
         govt_panel_01 = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
+        jPanel7 = new javax.swing.JPanel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
+        jPanel9 = new javax.swing.JPanel();
+        sc_n = new javax.swing.JTextField();
+        sc_id = new javax.swing.JTextField();
+        loc_t = new javax.swing.JTextField();
+        loc_d = new javax.swing.JTextField();
+        loc_v = new javax.swing.JTextField();
+        loc_pc = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jPanel10 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
+        jPanel8 = new javax.swing.JPanel();
+        exem_rs = new javax.swing.JTextField();
+        exem_year = new javax.swing.JTextField();
+        exem_stid = new javax.swing.JTextField();
+        exem_board = new javax.swing.JTextField();
+        sub_2 = new javax.swing.JComboBox<>();
+        sub_3 = new javax.swing.JComboBox<>();
+        sub_4 = new javax.swing.JComboBox<>();
+        g_exem = new javax.swing.JComboBox<>();
+        sub_1 = new javax.swing.JComboBox<>();
+        mark_4 = new javax.swing.JTextField();
+        total_mark = new javax.swing.JTextField();
+        mark_2 = new javax.swing.JTextField();
+        mark_3 = new javax.swing.JTextField();
+        mark_1 = new javax.swing.JTextField();
+        total_mark1 = new javax.swing.JTextField();
+        jButton3 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
+        jButton6 = new javax.swing.JButton();
+        jPanel11 = new javax.swing.JPanel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
+        jComboBox1 = new javax.swing.JComboBox<>();
+        jLabel5 = new javax.swing.JLabel();
         bg01 = new javax.swing.JLabel();
         home_button_02 = new javax.swing.JLabel();
         registation_button_02 = new javax.swing.JLabel();
@@ -56,115 +104,289 @@ public class govt_home extends javax.swing.JFrame {
         bg02.setToolTipText("");
         jPanel6.add(bg02, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, -1, 70));
 
-        home_button_01.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Button/Home button 01.png"))); // NOI18N
-        home_button_01.addMouseListener(new java.awt.event.MouseAdapter() {
+        jToggleButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Button/Home button 01.png"))); // NOI18N
+        jToggleButton1.setToolTipText("");
+        jToggleButton1.setContentAreaFilled(false);
+        jToggleButton1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                home_button_01MouseEntered(evt);
+                jToggleButton1MouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                home_button_01MouseExited(evt);
+                jToggleButton1MouseExited(evt);
             }
         });
-        jPanel6.add(home_button_01, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 147, -1, -1));
+        jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButton1ActionPerformed(evt);
+            }
+        });
+        jPanel6.add(jToggleButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 145, -1, -1));
 
-        registation_button_01.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Button/registation button 01.png"))); // NOI18N
-        registation_button_01.addMouseListener(new java.awt.event.MouseAdapter() {
+        jToggleButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Button/Board result button 01.png"))); // NOI18N
+        jToggleButton2.setContentAreaFilled(false);
+        jToggleButton2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                registation_button_01MouseEntered(evt);
+                jToggleButton2MouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                registation_button_01MouseExited(evt);
+                jToggleButton2MouseExited(evt);
             }
         });
-        jPanel6.add(registation_button_01, new org.netbeans.lib.awtextra.AbsoluteConstraints(22, 234, -1, -1));
+        jToggleButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButton2ActionPerformed(evt);
+            }
+        });
+        jPanel6.add(jToggleButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 320, -1, -1));
 
-        bordresult_button_01.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Button/Board result button 01.png"))); // NOI18N
-        bordresult_button_01.addMouseListener(new java.awt.event.MouseAdapter() {
+        jToggleButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Button/Log out button 01.png"))); // NOI18N
+        jToggleButton3.setContentAreaFilled(false);
+        jToggleButton3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                bordresult_button_01MouseEntered(evt);
+                jToggleButton3MouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                bordresult_button_01MouseExited(evt);
+                jToggleButton3MouseExited(evt);
             }
         });
-        jPanel6.add(bordresult_button_01, new org.netbeans.lib.awtextra.AbsoluteConstraints(25, 325, -1, -1));
+        jToggleButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButton3ActionPerformed(evt);
+            }
+        });
+        jPanel6.add(jToggleButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 490, -1, -1));
 
-        notic_button_01.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Button/Notice button 01.png"))); // NOI18N
-        notic_button_01.addMouseListener(new java.awt.event.MouseAdapter() {
+        jToggleButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Button/Notice button 01.png"))); // NOI18N
+        jToggleButton4.setSelected(true);
+        jToggleButton4.setBorderPainted(false);
+        jToggleButton4.setContentAreaFilled(false);
+        jToggleButton4.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                notic_button_01MouseEntered(evt);
+                jToggleButton4MouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                notic_button_01MouseExited(evt);
+                jToggleButton4MouseExited(evt);
             }
         });
-        jPanel6.add(notic_button_01, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 410, -1, -1));
-
-        logout_button_01.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Button/Log out button 01.png"))); // NOI18N
-        logout_button_01.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                logout_button_01MouseClicked(evt);
+        jToggleButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButton4ActionPerformed(evt);
             }
+        });
+        jPanel6.add(jToggleButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 410, -1, -1));
+
+        jToggleButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Button/registation button 01.png"))); // NOI18N
+        jToggleButton5.setContentAreaFilled(false);
+        jToggleButton5.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                logout_button_01MouseEntered(evt);
+                jToggleButton5MouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                logout_button_01MouseExited(evt);
+                jToggleButton5MouseExited(evt);
             }
         });
-        jPanel6.add(logout_button_01, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 500, -1, -1));
+        jToggleButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButton5ActionPerformed(evt);
+            }
+        });
+        jPanel6.add(jToggleButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, -1, -1));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 830, Short.MAX_VALUE)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 615, Short.MAX_VALUE)
-        );
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel7.setBackground(new java.awt.Color(232, 230, 217));
+        jPanel7.setForeground(new java.awt.Color(232, 230, 217));
+        jPanel7.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/logo.png"))); // NOI18N
+        jPanel7.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 140, 270, 310));
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/logo_2.png"))); // NOI18N
+        jPanel7.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 890, 640));
+
+        jPanel1.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 890, 640));
 
         govt_panel_01.addTab("tab1", jPanel1);
+
+        jPanel9.setBackground(new java.awt.Color(232, 230, 217));
+        jPanel9.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        sc_n.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
+        jPanel9.add(sc_n, new org.netbeans.lib.awtextra.AbsoluteConstraints(248, 90, 170, 40));
+
+        sc_id.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
+        jPanel9.add(sc_id, new org.netbeans.lib.awtextra.AbsoluteConstraints(248, 168, 170, 40));
+
+        loc_t.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
+        jPanel9.add(loc_t, new org.netbeans.lib.awtextra.AbsoluteConstraints(248, 320, 170, 40));
+
+        loc_d.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
+        jPanel9.add(loc_d, new org.netbeans.lib.awtextra.AbsoluteConstraints(248, 397, 170, 40));
+
+        loc_v.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
+        jPanel9.add(loc_v, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 321, 170, 40));
+
+        loc_pc.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
+        jPanel9.add(loc_pc, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 397, 170, 40));
+
+        jButton1.setBackground(new java.awt.Color(232, 230, 217));
+        jButton1.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 24)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(51, 51, 51));
+        jButton1.setText("Save");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jPanel9.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 508, -1, -1));
+
+        jButton2.setBackground(new java.awt.Color(232, 230, 217));
+        jButton2.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 24)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(51, 51, 51));
+        jButton2.setText("Clear");
+        jPanel9.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 508, -1, -1));
+
+        jPanel10.setBackground(new java.awt.Color(232, 230, 217));
+
+        jLabel1.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 24)); // NOI18N
+        jLabel1.setText("Password:");
+
+        javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
+        jPanel10.setLayout(jPanel10Layout);
+        jPanel10Layout.setHorizontalGroup(
+            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel10Layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(jLabel1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel10Layout.setVerticalGroup(
+            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel10Layout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addComponent(jLabel1)
+                .addContainerGap(28, Short.MAX_VALUE))
+        );
+
+        jPanel9.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 380, 150, 80));
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Background/school reg.png"))); // NOI18N
+        jPanel9.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 860, 560));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 830, Short.MAX_VALUE)
+            .addGap(0, 950, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(jPanel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 615, Short.MAX_VALUE)
+            .addGap(0, 640, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(jPanel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         govt_panel_01.addTab("tab2", jPanel2);
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 830, Short.MAX_VALUE)
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel8.setBackground(new java.awt.Color(232, 230, 217));
+        jPanel8.setForeground(new java.awt.Color(232, 230, 217));
+        jPanel8.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        exem_rs.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
+        jPanel8.add(exem_rs, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 113, 170, 40));
+
+        exem_year.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
+        jPanel8.add(exem_year, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 189, 170, 40));
+
+        exem_stid.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
+        jPanel8.add(exem_stid, new org.netbeans.lib.awtextra.AbsoluteConstraints(618, 191, 170, 40));
+
+        exem_board.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
+        jPanel8.add(exem_board, new org.netbeans.lib.awtextra.AbsoluteConstraints(617, 114, 170, 40));
+
+        sub_2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--Selection Subject--", "Bangla", "English", "Math", "Islam" }));
+        jPanel8.add(sub_2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 420, 150, 30));
+
+        sub_3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--Selection Subject--", "Bangla", "English", "Math", "Islam" }));
+        jPanel8.add(sub_3, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 460, 150, 30));
+
+        sub_4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--Selection Subject--", "Bangla", "English", "Math", "Islam" }));
+        jPanel8.add(sub_4, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 500, 150, 30));
+
+        g_exem.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--Select Exam--", "JSC", "SSC", "HSC" }));
+        jPanel8.add(g_exem, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 340, 150, 30));
+
+        sub_1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--Selection Subject--", "Bangla", "English", "Math", "Islam" }));
+        jPanel8.add(sub_1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 380, 150, 30));
+        jPanel8.add(mark_4, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 500, 90, 30));
+        jPanel8.add(total_mark, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 500, 90, 30));
+        jPanel8.add(mark_2, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 420, 90, 30));
+        jPanel8.add(mark_3, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 460, 90, 30));
+        jPanel8.add(mark_1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 380, 90, 30));
+        jPanel8.add(total_mark1, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 500, 90, 30));
+
+        jButton3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jButton3.setText("Edit");
+        jPanel8.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 550, -1, -1));
+
+        jButton4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jButton4.setText("Browse");
+        jPanel8.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 340, -1, -1));
+
+        jButton5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jButton5.setText("Clean");
+        jPanel8.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 550, -1, -1));
+
+        jButton6.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jButton6.setText("Save");
+        jPanel8.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 550, -1, -1));
+
+        javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
+        jPanel11.setLayout(jPanel11Layout);
+        jPanel11Layout.setHorizontalGroup(
+            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 220, Short.MAX_VALUE)
         );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 615, Short.MAX_VALUE)
+        jPanel11Layout.setVerticalGroup(
+            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 110, Short.MAX_VALUE)
         );
+
+        jPanel8.add(jPanel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 370, 220, 110));
+
+        jLabel9.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel9.setText("GPA");
+        jPanel8.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 480, -1, -1));
+
+        jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel8.setText("Total");
+        jPanel8.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 480, -1, -1));
+
+        jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel7.setText("Results");
+        jPanel8.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 340, -1, -1));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Background/bord reg.png"))); // NOI18N
+        jPanel8.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, -1, -1));
+
+        jPanel3.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 950, 630));
 
         govt_panel_01.addTab("tab3", jPanel3);
 
         jPanel5.setBackground(new java.awt.Color(232, 230, 217));
+        jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 830, Short.MAX_VALUE)
-        );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 609, Short.MAX_VALUE)
-        );
+        jComboBox1.setBackground(new java.awt.Color(232, 230, 217));
+        jComboBox1.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Emergency Contract", "Doctor  16263", "Fire Service  102", "Police  999", " " }));
+        jPanel5.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 60, 220, 30));
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/note.png"))); // NOI18N
+        jPanel5.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 15, -1, 587));
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -174,14 +396,12 @@ public class govt_home extends javax.swing.JFrame {
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jPanel5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         govt_panel_01.addTab("tab4", jPanel4);
 
-        jPanel6.add(govt_panel_01, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, -10, 830, 650));
+        jPanel6.add(govt_panel_01, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 0, 830, 630));
 
         bg01.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Background/govt home.png"))); // NOI18N
         jPanel6.add(bg01, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, -1, -1));
@@ -215,50 +435,87 @@ public class govt_home extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void home_button_01MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_home_button_01MouseEntered
-        home_button_01.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Button/Home button 02.png")));
-    }//GEN-LAST:event_home_button_01MouseEntered
+    private void jToggleButton1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jToggleButton1MouseEntered
+        jToggleButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Button/Home button 02.png")));
+    }//GEN-LAST:event_jToggleButton1MouseEntered
 
-    private void home_button_01MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_home_button_01MouseExited
-         home_button_01.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Button/Home button 01.png")));
-    }//GEN-LAST:event_home_button_01MouseExited
+    private void jToggleButton1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jToggleButton1MouseExited
+      jToggleButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Button/Home button 01.png")));
+    }//GEN-LAST:event_jToggleButton1MouseExited
 
-    private void registation_button_01MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_registation_button_01MouseEntered
-        registation_button_01.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Button/registation button 02.png")));
-    }//GEN-LAST:event_registation_button_01MouseEntered
+    private void jToggleButton5MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jToggleButton5MouseEntered
+      jToggleButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Button/registation button 02.png")));
+    }//GEN-LAST:event_jToggleButton5MouseEntered
 
-    private void registation_button_01MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_registation_button_01MouseExited
-        registation_button_01.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Button/registation button 01.png")));
-    }//GEN-LAST:event_registation_button_01MouseExited
+    private void jToggleButton5MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jToggleButton5MouseExited
+      jToggleButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Button/registation button 01.png")));
+    }//GEN-LAST:event_jToggleButton5MouseExited
 
-    private void bordresult_button_01MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bordresult_button_01MouseEntered
-        bordresult_button_01.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Button/Board result button 02.png")));
-    }//GEN-LAST:event_bordresult_button_01MouseEntered
+    private void jToggleButton2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jToggleButton2MouseEntered
+      jToggleButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Button/Board result button 02.png")));
+    }//GEN-LAST:event_jToggleButton2MouseEntered
 
-    private void bordresult_button_01MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bordresult_button_01MouseExited
-        bordresult_button_01.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Button/Board result button 01.png")));
-    }//GEN-LAST:event_bordresult_button_01MouseExited
+    private void jToggleButton2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jToggleButton2MouseExited
+      jToggleButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Button/Board result button 01.png")));
+    }//GEN-LAST:event_jToggleButton2MouseExited
 
-    private void notic_button_01MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_notic_button_01MouseEntered
-       notic_button_01.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Button/Notice button 02.png")));
-    }//GEN-LAST:event_notic_button_01MouseEntered
+    private void jToggleButton4MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jToggleButton4MouseEntered
+      jToggleButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Button/Notice button 02.png")));
+    }//GEN-LAST:event_jToggleButton4MouseEntered
 
-    private void notic_button_01MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_notic_button_01MouseExited
-       notic_button_01.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Button/Notice button 01.png")));
-    }//GEN-LAST:event_notic_button_01MouseExited
+    private void jToggleButton4MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jToggleButton4MouseExited
+      jToggleButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Button/Notice button 01.png")));
+    }//GEN-LAST:event_jToggleButton4MouseExited
 
-    private void logout_button_01MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logout_button_01MouseEntered
-       logout_button_01.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Button/Log out button 02.png")));
-    }//GEN-LAST:event_logout_button_01MouseEntered
+    private void jToggleButton3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jToggleButton3MouseEntered
+      jToggleButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Button/Log out button 02.png")));
+    }//GEN-LAST:event_jToggleButton3MouseEntered
 
-    private void logout_button_01MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logout_button_01MouseExited
-        logout_button_01.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Button/Log out button 01.png")));
-    }//GEN-LAST:event_logout_button_01MouseExited
+    private void jToggleButton3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jToggleButton3MouseExited
+      jToggleButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Button/Log out button 01.png")));
+    }//GEN-LAST:event_jToggleButton3MouseExited
 
-    private void logout_button_01MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logout_button_01MouseClicked
+    private void jToggleButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton3ActionPerformed
         new govt_login().setVisible(true);
         dispose();
-    }//GEN-LAST:event_logout_button_01MouseClicked
+    }//GEN-LAST:event_jToggleButton3ActionPerformed
+
+    private void jToggleButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton5ActionPerformed
+       govt_panel_01.setSelectedIndex(1);
+    }//GEN-LAST:event_jToggleButton5ActionPerformed
+
+    private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
+        govt_panel_01.setSelectedIndex(0);
+    }//GEN-LAST:event_jToggleButton1ActionPerformed
+
+    private void jToggleButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton2ActionPerformed
+        govt_panel_01.setSelectedIndex(2);
+    }//GEN-LAST:event_jToggleButton2ActionPerformed
+
+    private void jToggleButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton4ActionPerformed
+        govt_panel_01.setSelectedIndex(3);
+    }//GEN-LAST:event_jToggleButton4ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+         String sch_name = sc_n.getText();
+         String sch_id = sc_id.getText();
+         String loc_th = loc_t.getText();
+         String loc_di = loc_d.getText();
+         String loc_vi = loc_v.getText();
+         String sch_pass = loc_pc.getText();
+                
+        try{
+        Class.forName("com.mysql.jdbc.Driver");
+        Connection con=DriverManager.getConnection("jdbc:mysql://127.0.0.1:3307/nsid","root","root");
+        Statement statement=con.createStatement();
+        String query =("INSERT INTO school_registration (school_name, school_id, school_password, thana, district, village) VALUES ('"+sch_name+"','"+sch_id+"','"+sch_pass+"','"+loc_th+"','"+loc_di+"','"+loc_vi+"')");
+        statement.executeUpdate(query);
+        JOptionPane.showMessageDialog(null,"Save Data");
+       }
+       catch(HeadlessException | ClassNotFoundException | SQLException e){
+           Logger.getLogger(govt_home.class.getName()).log(Level.SEVERE, null, e);
+       } 
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -296,22 +553,64 @@ public class govt_home extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel bg01;
     private javax.swing.JLabel bg02;
-    private javax.swing.JLabel bordresult_button_01;
     private javax.swing.JLabel bordresult_button_02;
+    private javax.swing.JTextField exem_board;
+    private javax.swing.JTextField exem_rs;
+    private javax.swing.JTextField exem_stid;
+    private javax.swing.JTextField exem_year;
+    private javax.swing.JComboBox<String> g_exem;
     private javax.swing.JTabbedPane govt_panel_01;
-    private javax.swing.JLabel home_button_01;
     private javax.swing.JLabel home_button_02;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
+    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel10;
+    private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
-    private javax.swing.JLabel logout_button_01;
+    private javax.swing.JPanel jPanel7;
+    private javax.swing.JPanel jPanel8;
+    private javax.swing.JPanel jPanel9;
+    private javax.swing.JToggleButton jToggleButton1;
+    private javax.swing.JToggleButton jToggleButton2;
+    private javax.swing.JToggleButton jToggleButton3;
+    private javax.swing.JToggleButton jToggleButton4;
+    private javax.swing.JToggleButton jToggleButton5;
+    private javax.swing.JTextField loc_d;
+    private javax.swing.JTextField loc_pc;
+    private javax.swing.JTextField loc_t;
+    private javax.swing.JTextField loc_v;
     private javax.swing.JLabel logout_button_02;
-    private javax.swing.JLabel notic_button_01;
+    private javax.swing.JTextField mark_1;
+    private javax.swing.JTextField mark_2;
+    private javax.swing.JTextField mark_3;
+    private javax.swing.JTextField mark_4;
     private javax.swing.JLabel notic_button_02;
-    private javax.swing.JLabel registation_button_01;
     private javax.swing.JLabel registation_button_02;
+    private javax.swing.JTextField sc_id;
+    private javax.swing.JTextField sc_n;
+    private javax.swing.JComboBox<String> sub_1;
+    private javax.swing.JComboBox<String> sub_2;
+    private javax.swing.JComboBox<String> sub_3;
+    private javax.swing.JComboBox<String> sub_4;
+    private javax.swing.JTextField total_mark;
+    private javax.swing.JTextField total_mark1;
     // End of variables declaration//GEN-END:variables
 }

@@ -3,9 +3,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package Log_IN;
-
 import home.teacher_home;
-
+import java.awt.HeadlessException;
+import java.sql.*;
+import javax.swing.JOptionPane;
 /**
  *
  * @author AL-SABA
@@ -29,10 +30,10 @@ public class teacher_login extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jTextField1 = new javax.swing.JTextField();
-        jPasswordField1 = new javax.swing.JPasswordField();
+        id_user = new javax.swing.JTextField();
+        pass_user = new javax.swing.JPasswordField();
+        jButton1 = new javax.swing.JButton();
         icon_01 = new javax.swing.JLabel();
-        login_button_01 = new javax.swing.JLabel();
         background = new javax.swing.JLabel();
         login_button_02 = new javax.swing.JLabel();
         icon_02 = new javax.swing.JLabel();
@@ -41,16 +42,33 @@ public class teacher_login extends javax.swing.JFrame {
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jTextField1.setBackground(new java.awt.Color(237, 237, 233));
-        jTextField1.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
-        jTextField1.setBorder(null);
-        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(539, 354, 290, 40));
+        id_user.setBackground(new java.awt.Color(237, 237, 233));
+        id_user.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
+        id_user.setBorder(null);
+        jPanel1.add(id_user, new org.netbeans.lib.awtextra.AbsoluteConstraints(539, 354, 290, 40));
 
-        jPasswordField1.setBackground(new java.awt.Color(237, 237, 233));
-        jPasswordField1.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
-        jPasswordField1.setAutoscrolls(false);
-        jPasswordField1.setBorder(null);
-        jPanel1.add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 459, 290, 40));
+        pass_user.setBackground(new java.awt.Color(237, 237, 233));
+        pass_user.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
+        pass_user.setAutoscrolls(false);
+        pass_user.setBorder(null);
+        jPanel1.add(pass_user, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 459, 290, 40));
+
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Button/login button 07.png"))); // NOI18N
+        jButton1.setContentAreaFilled(false);
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jButton1MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jButton1MouseExited(evt);
+            }
+        });
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(619, 521, -1, -1));
 
         icon_01.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icon04.png"))); // NOI18N
         icon_01.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -65,20 +83,6 @@ public class teacher_login extends javax.swing.JFrame {
             }
         });
         jPanel1.add(icon_01, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 570, -1, -1));
-
-        login_button_01.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Button/login button 07.png"))); // NOI18N
-        login_button_01.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                login_button_01MouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                login_button_01MouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                login_button_01MouseExited(evt);
-            }
-        });
-        jPanel1.add(login_button_01, new org.netbeans.lib.awtextra.AbsoluteConstraints(633, 530, 180, -1));
 
         background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Background/teacher login.png"))); // NOI18N
         jPanel1.add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -111,23 +115,44 @@ public class teacher_login extends javax.swing.JFrame {
         icon_01.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icon04.png")));
     }//GEN-LAST:event_icon_01MouseExited
 
-    private void login_button_01MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_login_button_01MouseEntered
-       login_button_01.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Button/login button 06.png")));
-    }//GEN-LAST:event_login_button_01MouseEntered
-
-    private void login_button_01MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_login_button_01MouseExited
-       login_button_01.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Button/login button 07.png")));
-    }//GEN-LAST:event_login_button_01MouseExited
-
-    private void login_button_01MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_login_button_01MouseClicked
-          new teacher_home().setVisible(true);
-          dispose();
-    }//GEN-LAST:event_login_button_01MouseClicked
-
     private void icon_01MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_icon_01MouseClicked
         new Home_page_all_account().setVisible(true);
         dispose();
     }//GEN-LAST:event_icon_01MouseClicked
+
+    private void jButton1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseEntered
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Button/login button 06.png")));
+    }//GEN-LAST:event_jButton1MouseEntered
+
+    private void jButton1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseExited
+       jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Button/login button 07.png")));
+    }//GEN-LAST:event_jButton1MouseExited
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+       var id1=id_user.getText();
+       var pass1=pass_user.getText();
+        
+        try{
+        Class.forName("com.mysql.jdbc.Driver");
+        Connection con=DriverManager.getConnection("jdbc:mysql://127.0.0.1:3307/nsid","root","");
+        Statement stmt=con.createStatement();
+        ResultSet rsr;
+            rsr = stmt.executeQuery("SELECT * FROM school_registration where school_id ='"+id1+"' and school_id='"+pass1+"'");
+        if(rsr.next()){
+            java.awt.EventQueue.invokeLater(() -> {
+            new teacher_home().setVisible(true);
+            dispose();
+        });
+
+        } 
+        else{
+             JOptionPane.showMessageDialog(null,"Incorrect Enter your ID & Password");  
+        }
+       }
+       catch(HeadlessException | ClassNotFoundException | SQLException e){
+           System.out.print(e);
+       } 
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -166,10 +191,10 @@ public class teacher_login extends javax.swing.JFrame {
     private javax.swing.JLabel background;
     private javax.swing.JLabel icon_01;
     private javax.swing.JLabel icon_02;
+    private javax.swing.JTextField id_user;
+    private javax.swing.JButton jButton1;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPasswordField jPasswordField1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JLabel login_button_01;
     private javax.swing.JLabel login_button_02;
+    private javax.swing.JPasswordField pass_user;
     // End of variables declaration//GEN-END:variables
 }

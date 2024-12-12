@@ -5,6 +5,13 @@
 package Log_IN;
 
 import home.student_home;
+import java.awt.HeadlessException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -29,9 +36,9 @@ public class student_login extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jTextField1 = new javax.swing.JTextField();
-        jPasswordField1 = new javax.swing.JPasswordField();
-        login_button_01 = new javax.swing.JLabel();
+        user_id = new javax.swing.JTextField();
+        user_pass = new javax.swing.JPasswordField();
+        jButton1 = new javax.swing.JButton();
         icon01 = new javax.swing.JLabel();
         bg = new javax.swing.JLabel();
         login_button_02 = new javax.swing.JLabel();
@@ -41,29 +48,32 @@ public class student_login extends javax.swing.JFrame {
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jTextField1.setBackground(new java.awt.Color(245, 245, 245));
-        jTextField1.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
-        jTextField1.setBorder(null);
-        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 293, 290, 40));
+        user_id.setBackground(new java.awt.Color(245, 245, 245));
+        user_id.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
+        user_id.setBorder(null);
+        jPanel1.add(user_id, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 293, 290, 40));
 
-        jPasswordField1.setBackground(new java.awt.Color(245, 245, 245));
-        jPasswordField1.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
-        jPasswordField1.setBorder(null);
-        jPanel1.add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 380, 280, 40));
+        user_pass.setBackground(new java.awt.Color(245, 245, 245));
+        user_pass.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
+        user_pass.setBorder(null);
+        jPanel1.add(user_pass, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 380, 280, 40));
 
-        login_button_01.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Button/login button 02.png"))); // NOI18N
-        login_button_01.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                login_button_01MouseClicked(evt);
-            }
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Button/login button 02.png"))); // NOI18N
+        jButton1.setContentAreaFilled(false);
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                login_button_01MouseEntered(evt);
+                jButton1MouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                login_button_01MouseExited(evt);
+                jButton1MouseExited(evt);
             }
         });
-        jPanel1.add(login_button_01, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 480, -1, -1));
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 476, -1, -1));
 
         icon01.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icon02.png"))); // NOI18N
         icon01.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -102,14 +112,6 @@ public class student_login extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void login_button_01MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_login_button_01MouseEntered
-        login_button_01.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Button/login button 03.png")));
-    }//GEN-LAST:event_login_button_01MouseEntered
-
-    private void login_button_01MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_login_button_01MouseExited
-        login_button_01.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Button/login button 02.png")));
-    }//GEN-LAST:event_login_button_01MouseExited
-
     private void icon01MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_icon01MouseEntered
          icon01.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icon03.png")));
     }//GEN-LAST:event_icon01MouseEntered
@@ -123,10 +125,39 @@ public class student_login extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_icon01MouseClicked
 
-    private void login_button_01MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_login_button_01MouseClicked
-       new student_home().setVisible(true);
-       dispose();
-    }//GEN-LAST:event_login_button_01MouseClicked
+    private void jButton1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseEntered
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Button/login button 03.png")));
+    }//GEN-LAST:event_jButton1MouseEntered
+
+    private void jButton1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseExited
+       jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Button/login button 02.png")));
+    }//GEN-LAST:event_jButton1MouseExited
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+       var id1=user_id.getText();
+       var pass1=user_pass.getText();
+        
+        try{
+        Class.forName("com.mysql.jdbc.Driver");
+        Connection con=DriverManager.getConnection("jdbc:mysql://127.0.0.1:3307/nsid","root","");
+        Statement stmt=con.createStatement();
+        ResultSet rsr;
+            rsr = stmt.executeQuery("SELECT * FROM student_registration where student_id ='"+id1+"' and student_id='"+pass1+"'");
+        if(rsr.next()){
+            java.awt.EventQueue.invokeLater(() -> {
+                new student_home().setVisible(true);
+                dispose();
+            });
+
+        } 
+        else{
+             JOptionPane.showMessageDialog(null,"Incorrect Enter your ID & Password");  
+        }
+       }
+       catch(HeadlessException | ClassNotFoundException | SQLException e){
+           System.out.print(e);
+       }
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -156,10 +187,8 @@ public class student_login extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new student_login().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new student_login().setVisible(true);
         });
     }
 
@@ -167,10 +196,10 @@ public class student_login extends javax.swing.JFrame {
     private javax.swing.JLabel bg;
     private javax.swing.JLabel icon01;
     private javax.swing.JLabel icon02;
+    private javax.swing.JButton jButton1;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPasswordField jPasswordField1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JLabel login_button_01;
     private javax.swing.JLabel login_button_02;
+    private javax.swing.JTextField user_id;
+    private javax.swing.JPasswordField user_pass;
     // End of variables declaration//GEN-END:variables
 }

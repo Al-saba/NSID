@@ -3,8 +3,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package Log_IN;
-
 import home.govt_home;
+import java.awt.HeadlessException;
+import java.sql.*;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -31,9 +33,9 @@ public class govt_login extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jPasswordField1 = new javax.swing.JPasswordField();
-        login_button_01 = new javax.swing.JLabel();
+        id01 = new javax.swing.JTextField();
+        pass01 = new javax.swing.JPasswordField();
+        log_in01 = new javax.swing.JButton();
         icon01 = new javax.swing.JLabel();
         background = new javax.swing.JLabel();
         login_button_02 = new javax.swing.JLabel();
@@ -51,29 +53,31 @@ public class govt_login extends javax.swing.JFrame {
         jLabel3.setText("Password");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 320, -1, -1));
 
-        jTextField1.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
-        jTextField1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 270, 140, 30));
+        id01.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
+        id01.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel1.add(id01, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 270, 140, 30));
 
-        jPasswordField1.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
-        jPasswordField1.setActionCommand("<Not Set>");
-        jPasswordField1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel1.add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 350, 140, 30));
+        pass01.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
+        pass01.setActionCommand("<Not Set>");
+        pass01.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel1.add(pass01, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 350, 140, 30));
 
-        login_button_01.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 20)); // NOI18N
-        login_button_01.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Button/login button 09.png"))); // NOI18N
-        login_button_01.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                login_button_01MouseClicked(evt);
-            }
+        log_in01.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Button/login button 09.png"))); // NOI18N
+        log_in01.setContentAreaFilled(false);
+        log_in01.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                login_button_01MouseEntered(evt);
+                log_in01MouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                login_button_01MouseExited(evt);
+                log_in01MouseExited(evt);
             }
         });
-        jPanel1.add(login_button_01, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 390, 90, 40));
+        log_in01.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                log_in01ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(log_in01, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 400, -1, -1));
 
         icon01.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icon04.png"))); // NOI18N
         icon01.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -112,14 +116,6 @@ public class govt_login extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void login_button_01MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_login_button_01MouseExited
-        login_button_01.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Button/login button 09.png")));
-    }//GEN-LAST:event_login_button_01MouseExited
-
-    private void login_button_01MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_login_button_01MouseEntered
-        login_button_01.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Button/login button 08.png")));
-    }//GEN-LAST:event_login_button_01MouseEntered
-
     private void icon01MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_icon01MouseEntered
       icon01.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icon01.png")));
     }//GEN-LAST:event_icon01MouseEntered
@@ -133,10 +129,39 @@ public class govt_login extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_icon01MouseClicked
 
-    private void login_button_01MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_login_button_01MouseClicked
-       new govt_home().setVisible(true);
-       dispose();
-    }//GEN-LAST:event_login_button_01MouseClicked
+    private void log_in01MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_log_in01MouseEntered
+       log_in01.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Button/login button 08.png")));
+    }//GEN-LAST:event_log_in01MouseEntered
+
+    private void log_in01MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_log_in01MouseExited
+        log_in01.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Button/login button 09.png")));
+    }//GEN-LAST:event_log_in01MouseExited
+
+    private void log_in01ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_log_in01ActionPerformed
+       var id=id01.getText();
+       var pass=pass01.getText();
+       
+       try{
+        Class.forName("com.mysql.jdbc.Driver");
+        Connection con=DriverManager.getConnection("jdbc:mysql://127.0.0.1:3307/nsid","root","");
+        Statement stmt=con.createStatement();
+        ResultSet rs=stmt.executeQuery("SELECT * FROM admin where email ='"+id+"' and password='"+pass+"'");
+        if(rs.next()){
+            java.awt.EventQueue.invokeLater(() -> {
+            new govt_home().setVisible(true);
+            dispose();
+        });
+
+        } 
+        else{
+             JOptionPane.showMessageDialog(null,"Incorrect Enter your ID & Password");  
+        }
+       }
+       catch(HeadlessException | ClassNotFoundException | SQLException e){
+           System.out.print(e);
+       } 
+       
+    }//GEN-LAST:event_log_in01ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -175,12 +200,12 @@ public class govt_login extends javax.swing.JFrame {
     private javax.swing.JLabel background;
     private javax.swing.JLabel icon01;
     private javax.swing.JLabel icon02;
+    private javax.swing.JTextField id01;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPasswordField jPasswordField1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JLabel login_button_01;
+    private javax.swing.JButton log_in01;
     private javax.swing.JLabel login_button_02;
+    private javax.swing.JPasswordField pass01;
     // End of variables declaration//GEN-END:variables
 }
