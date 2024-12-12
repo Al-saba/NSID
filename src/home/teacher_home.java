@@ -42,68 +42,68 @@ public class teacher_home extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
-        m_info_dis = new javax.swing.JTextField();
-        m_info_tha = new javax.swing.JTextField();
-        f_info_dis = new javax.swing.JTextField();
-        f_info_tha = new javax.swing.JTextField();
-        s_info_bn = new javax.swing.JTextField();
-        s_info_db = new javax.swing.JTextField();
-        m_info_nid = new javax.swing.JTextField();
-        m_info_name = new javax.swing.JTextField();
-        f_info_nid = new javax.swing.JTextField();
-        f_info_name = new javax.swing.JTextField();
-        s_info_id = new javax.swing.JTextField();
-        s_info_name = new javax.swing.JTextField();
+        nsid_mother_district = new javax.swing.JTextField();
+        nsid_mother_thana = new javax.swing.JTextField();
+        nsid_father_district = new javax.swing.JTextField();
+        nsid_father_thana = new javax.swing.JTextField();
+        nsid_birthno = new javax.swing.JTextField();
+        nsid_dateofbirth = new javax.swing.JTextField();
+        nsid_mother_nidno = new javax.swing.JTextField();
+        nsid_mother_name = new javax.swing.JTextField();
+        nsid_father_nidno = new javax.swing.JTextField();
+        nsid_father_name = new javax.swing.JTextField();
+        nsid_id = new javax.swing.JTextField();
+        nsid_name = new javax.swing.JTextField();
         jButton16 = new javax.swing.JButton();
-        jButton17 = new javax.swing.JButton();
+        clean_1 = new javax.swing.JButton();
         jButton18 = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         jPanel9 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        student_id_01 = new javax.swing.JTextField();
         jButton10 = new javax.swing.JButton();
-        jButton11 = new javax.swing.JButton();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jComboBox2 = new javax.swing.JComboBox<>();
-        jComboBox3 = new javax.swing.JComboBox<>();
-        jComboBox4 = new javax.swing.JComboBox<>();
-        jTextField9 = new javax.swing.JTextField();
-        jTextField10 = new javax.swing.JTextField();
-        jTextField11 = new javax.swing.JTextField();
-        jTextField12 = new javax.swing.JTextField();
+        clean_2 = new javax.swing.JButton();
+        std_sub_1 = new javax.swing.JComboBox<>();
+        std_sub_2 = new javax.swing.JComboBox<>();
+        std_sub_3 = new javax.swing.JComboBox<>();
+        std_sub_res1 = new javax.swing.JTextField();
+        std_sub_res2 = new javax.swing.JTextField();
+        std_sub_res3 = new javax.swing.JTextField();
+        std_sub_restotal = new javax.swing.JTextField();
         jButton14 = new javax.swing.JButton();
         jLabel12 = new javax.swing.JLabel();
         Browse = new javax.swing.JButton();
         jPanel6 = new javax.swing.JPanel();
         jLabel14 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        std_class = new javax.swing.JTextField();
         jLabel15 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
         jPanel8 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
-        jTextField6 = new javax.swing.JTextField();
-        jTextField7 = new javax.swing.JTextField();
+        student_id_02 = new javax.swing.JTextField();
+        student_name_01 = new javax.swing.JTextField();
+        student_class_01 = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
-        jTextField8 = new javax.swing.JTextField();
+        student_year_01 = new javax.swing.JTextField();
         jButton12 = new javax.swing.JButton();
-        jButton13 = new javax.swing.JButton();
+        clean_3 = new javax.swing.JButton();
         jButton15 = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
-        jTextField13 = new javax.swing.JTextField();
+        student_id_03 = new javax.swing.JTextField();
         jLabel18 = new javax.swing.JLabel();
-        jTextField14 = new javax.swing.JTextField();
-        jTextField15 = new javax.swing.JTextField();
+        student_name_02 = new javax.swing.JTextField();
+        student_year_02 = new javax.swing.JTextField();
         jLabel19 = new javax.swing.JLabel();
         jButton19 = new javax.swing.JButton();
         jButton20 = new javax.swing.JButton();
-        jButton21 = new javax.swing.JButton();
+        clean_4 = new javax.swing.JButton();
         jLabel20 = new javax.swing.JLabel();
-        jTextField16 = new javax.swing.JTextField();
+        student_class_02 = new javax.swing.JTextField();
         jPanel7 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         bg = new javax.swing.JLabel();
@@ -249,42 +249,42 @@ public class teacher_home extends javax.swing.JFrame {
 
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        m_info_dis.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jPanel4.add(m_info_dis, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 570, 180, 40));
+        nsid_mother_district.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jPanel4.add(nsid_mother_district, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 570, 180, 40));
 
-        m_info_tha.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jPanel4.add(m_info_tha, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 490, 180, 40));
+        nsid_mother_thana.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jPanel4.add(nsid_mother_thana, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 490, 180, 40));
 
-        f_info_dis.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jPanel4.add(f_info_dis, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 370, 180, 40));
+        nsid_father_district.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jPanel4.add(nsid_father_district, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 370, 180, 40));
 
-        f_info_tha.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jPanel4.add(f_info_tha, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 290, 180, 40));
+        nsid_father_thana.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jPanel4.add(nsid_father_thana, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 290, 180, 40));
 
-        s_info_bn.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jPanel4.add(s_info_bn, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 170, 180, 40));
+        nsid_birthno.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jPanel4.add(nsid_birthno, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 170, 180, 40));
 
-        s_info_db.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jPanel4.add(s_info_db, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 90, 180, 40));
+        nsid_dateofbirth.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jPanel4.add(nsid_dateofbirth, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 90, 180, 40));
 
-        m_info_nid.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jPanel4.add(m_info_nid, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 569, 180, 40));
+        nsid_mother_nidno.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jPanel4.add(nsid_mother_nidno, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 569, 180, 40));
 
-        m_info_name.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jPanel4.add(m_info_name, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 488, 180, 40));
+        nsid_mother_name.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jPanel4.add(nsid_mother_name, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 488, 180, 40));
 
-        f_info_nid.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jPanel4.add(f_info_nid, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 370, 180, 40));
+        nsid_father_nidno.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jPanel4.add(nsid_father_nidno, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 370, 180, 40));
 
-        f_info_name.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jPanel4.add(f_info_name, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 290, 180, 40));
+        nsid_father_name.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jPanel4.add(nsid_father_name, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 290, 180, 40));
 
-        s_info_id.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        s_info_id.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        jPanel4.add(s_info_id, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 172, 180, 40));
+        nsid_id.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        nsid_id.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        jPanel4.add(nsid_id, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 172, 180, 40));
 
-        s_info_name.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jPanel4.add(s_info_name, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 91, 180, 40));
+        nsid_name.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jPanel4.add(nsid_name, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 91, 180, 40));
 
         jButton16.setBackground(new java.awt.Color(61, 52, 139));
         jButton16.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
@@ -292,11 +292,16 @@ public class teacher_home extends javax.swing.JFrame {
         jButton16.setText("Save");
         jPanel4.add(jButton16, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 620, -1, -1));
 
-        jButton17.setBackground(new java.awt.Color(61, 52, 139));
-        jButton17.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
-        jButton17.setForeground(new java.awt.Color(255, 255, 255));
-        jButton17.setText("Clean");
-        jPanel4.add(jButton17, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 620, -1, -1));
+        clean_1.setBackground(new java.awt.Color(61, 52, 139));
+        clean_1.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
+        clean_1.setForeground(new java.awt.Color(255, 255, 255));
+        clean_1.setText("Clean");
+        clean_1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                clean_1ActionPerformed(evt);
+            }
+        });
+        jPanel4.add(clean_1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 620, -1, -1));
 
         jButton18.setBackground(new java.awt.Color(61, 52, 139));
         jButton18.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
@@ -330,21 +335,24 @@ public class teacher_home extends javax.swing.JFrame {
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Class:");
 
-        jTextField1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        student_id_01.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
         jButton10.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jButton10.setText("Save");
 
-        jButton11.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jButton11.setText("Clean");
+        clean_2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        clean_2.setText("Clean");
+        clean_2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                clean_2ActionPerformed(evt);
+            }
+        });
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--Selection--", "Bangla", "English", "Math" }));
+        std_sub_1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--Selection--", "Bangla", "English", "Math" }));
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--Selection--", "Bangla", "English", "Math" }));
+        std_sub_2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--Selection--", "Bangla", "English", "Math" }));
 
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--Selection--", "Bangla", "English", "Math" }));
-
-        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--Selection--", "Bangla", "English", "Math" }));
+        std_sub_3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--Selection--", "Bangla", "English", "Math" }));
 
         jButton14.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jButton14.setText("Edit");
@@ -371,11 +379,15 @@ public class teacher_home extends javax.swing.JFrame {
         jLabel14.setForeground(new java.awt.Color(255, 255, 255));
         jLabel14.setText("Certificate");
 
-        jTextField2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        std_class.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
         jLabel15.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(255, 255, 255));
         jLabel15.setText("Student ID:");
+
+        jLabel21.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
+        jLabel21.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel21.setText("Total:");
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -392,34 +404,34 @@ public class teacher_home extends javax.swing.JFrame {
                         .addGap(31, 31, 31)
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel5Layout.createSequentialGroup()
-                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(student_id_01, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(std_class, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                 .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel5Layout.createSequentialGroup()
                                     .addComponent(jButton10)
                                     .addGap(27, 27, 27)
                                     .addComponent(jButton14)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jButton11))
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel5Layout.createSequentialGroup()
-                                    .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
-                                    .addComponent(jTextField12, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(jPanel5Layout.createSequentialGroup()
-                                    .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(clean_2))
                                 .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel5Layout.createSequentialGroup()
                                     .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(std_sub_1, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(std_sub_2, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGap(26, 26, 26)
                                     .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(jTextField9, javax.swing.GroupLayout.DEFAULT_SIZE, 111, Short.MAX_VALUE)
-                                        .addComponent(jTextField10))))
+                                        .addComponent(std_sub_res1, javax.swing.GroupLayout.DEFAULT_SIZE, 111, Short.MAX_VALUE)
+                                        .addComponent(std_sub_res2)))
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel5Layout.createSequentialGroup()
+                                    .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(std_sub_3, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
+                                    .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(std_sub_res3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(std_sub_restotal, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))))
                             .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(184, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
@@ -440,28 +452,28 @@ public class teacher_home extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(student_id_01, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(std_class, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jTextField9, javax.swing.GroupLayout.DEFAULT_SIZE, 33, Short.MAX_VALUE)
-                    .addComponent(jComboBox1))
+                    .addComponent(std_sub_res1, javax.swing.GroupLayout.DEFAULT_SIZE, 33, Short.MAX_VALUE)
+                    .addComponent(std_sub_1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(std_sub_2, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(std_sub_res2, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jComboBox3, javax.swing.GroupLayout.DEFAULT_SIZE, 33, Short.MAX_VALUE)
-                    .addComponent(jTextField11))
+                    .addComponent(std_sub_3, javax.swing.GroupLayout.DEFAULT_SIZE, 33, Short.MAX_VALUE)
+                    .addComponent(std_sub_res3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jTextField12)
-                    .addComponent(jComboBox4, javax.swing.GroupLayout.DEFAULT_SIZE, 33, Short.MAX_VALUE))
-                .addGap(28, 28, 28)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(std_sub_restotal, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(16, 16, 16)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton10)
-                    .addComponent(jButton11)
+                    .addComponent(clean_2)
                     .addComponent(jButton14))
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel5Layout.createSequentialGroup()
@@ -497,23 +509,28 @@ public class teacher_home extends javax.swing.JFrame {
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText("Student Name:");
 
-        jTextField5.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        student_id_02.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
-        jTextField6.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        student_name_01.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
-        jTextField7.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        student_class_01.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
         jLabel11.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
         jLabel11.setText("Year:");
 
-        jTextField8.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        student_year_01.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
         jButton12.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jButton12.setText("Save");
 
-        jButton13.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jButton13.setText("Clean");
+        clean_3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        clean_3.setText("Clean");
+        clean_3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                clean_3ActionPerformed(evt);
+            }
+        });
 
         jButton15.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jButton15.setText("Edit");
@@ -530,15 +547,15 @@ public class teacher_home extends javax.swing.JFrame {
         jLabel17.setForeground(new java.awt.Color(255, 255, 255));
         jLabel17.setText("Student ID:");
 
-        jTextField13.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        student_id_03.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
         jLabel18.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
         jLabel18.setForeground(new java.awt.Color(255, 255, 255));
         jLabel18.setText("Student Name:");
 
-        jTextField14.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        student_name_02.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
-        jTextField15.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        student_year_02.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
         jLabel19.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
         jLabel19.setForeground(new java.awt.Color(255, 255, 255));
@@ -550,14 +567,19 @@ public class teacher_home extends javax.swing.JFrame {
         jButton20.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jButton20.setText("Edit");
 
-        jButton21.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jButton21.setText("Clean");
+        clean_4.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        clean_4.setText("Clean");
+        clean_4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                clean_4ActionPerformed(evt);
+            }
+        });
 
         jLabel20.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
         jLabel20.setForeground(new java.awt.Color(255, 255, 255));
         jLabel20.setText("Examinatio:");
 
-        jTextField16.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        student_class_02.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
@@ -582,13 +604,13 @@ public class teacher_home extends javax.swing.JFrame {
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                     .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addGroup(jPanel8Layout.createSequentialGroup()
-                                            .addComponent(jTextField14, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(student_name_02, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addGap(18, 18, 18)
                                             .addComponent(jButton20))
                                         .addGroup(jPanel8Layout.createSequentialGroup()
                                             .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                 .addGroup(jPanel8Layout.createSequentialGroup()
-                                                    .addComponent(jTextField13, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(student_id_03, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                                     .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
@@ -596,14 +618,14 @@ public class teacher_home extends javax.swing.JFrame {
                                                     .addComponent(jLabel19)
                                                     .addGap(14, 14, 14)))
                                             .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addComponent(jTextField15, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addComponent(jTextField16, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                                .addComponent(student_year_02, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(student_class_02, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE))))
                                     .addGap(15, 15, 15))
                                 .addGroup(jPanel8Layout.createSequentialGroup()
                                     .addGap(180, 180, 180)
                                     .addComponent(jButton19)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jButton21))))
+                                    .addComponent(clean_4))))
                         .addGroup(jPanel8Layout.createSequentialGroup()
                             .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addGroup(jPanel8Layout.createSequentialGroup()
@@ -614,11 +636,11 @@ public class teacher_home extends javax.swing.JFrame {
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                     .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addGroup(jPanel8Layout.createSequentialGroup()
-                                            .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(student_id_02, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                             .addComponent(jLabel9))
                                         .addGroup(jPanel8Layout.createSequentialGroup()
-                                            .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(student_name_01, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addGap(18, 18, 18)
                                             .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE))))
                                 .addGroup(jPanel8Layout.createSequentialGroup()
@@ -629,9 +651,9 @@ public class teacher_home extends javax.swing.JFrame {
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addComponent(jButton13)))))
+                                    .addComponent(student_class_01, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(student_year_01, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(clean_3)))))
                 .addContainerGap(183, Short.MAX_VALUE))
         );
         jPanel8Layout.setVerticalGroup(
@@ -643,37 +665,37 @@ public class teacher_home extends javax.swing.JFrame {
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(student_id_02, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(student_class_01, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(student_name_01, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(student_year_01, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton12)
-                    .addComponent(jButton13)
+                    .addComponent(clean_3)
                     .addComponent(jButton15))
                 .addGap(37, 37, 37)
                 .addComponent(jLabel16)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(student_id_03, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(student_class_02, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(student_name_02, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(student_year_02, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton19)
-                    .addComponent(jButton21)
+                    .addComponent(clean_4)
                     .addComponent(jButton20))
                 .addContainerGap(295, Short.MAX_VALUE))
         );
@@ -788,9 +810,47 @@ public class teacher_home extends javax.swing.JFrame {
         teacher_panel.setSelectedIndex(4);
     }//GEN-LAST:event_jButton5ActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
+    private void clean_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clean_1ActionPerformed
+        nsid_name.setText("");
+        nsid_id.setText("");
+        nsid_dateofbirth.setText("");
+        nsid_birthno.setText("");
+        nsid_father_name.setText("");
+        nsid_father_thana.setText("");
+        nsid_father_district.setText("");
+        nsid_father_nidno.setText("");
+        nsid_mother_name.setText("");
+        nsid_mother_thana.setText("");
+        nsid_mother_district.setText("");
+        nsid_mother_nidno.setText("");
+    }//GEN-LAST:event_clean_1ActionPerformed
+    private void clean_2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clean_2ActionPerformed
+        student_id_01.setText("");
+        std_class.setText("");
+        std_sub_1.setSelectedIndex(0);
+        std_sub_2.setSelectedIndex(0);
+        std_sub_3.setSelectedIndex(0);
+        std_sub_res1.setText("");
+        std_sub_res2.setText("");
+        std_sub_res3.setText("");
+        std_sub_restotal.setText("");
+    }//GEN-LAST:event_clean_2ActionPerformed
+    private void clean_3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clean_3ActionPerformed
+       student_id_02.setText("");
+       student_class_01.setText("");
+       student_name_01.setText("");
+       student_year_01.setText("");      
+    }//GEN-LAST:event_clean_3ActionPerformed
+    private void clean_4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clean_4ActionPerformed
+       student_id_03.setText("");
+       student_class_02.setText("");
+       student_name_02.setText("");
+       student_year_02.setText("");
+    }//GEN-LAST:event_clean_4ActionPerformed
+
+    /*/**
+    * @param args the command line arguments
+    */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -825,33 +885,25 @@ public class teacher_home extends javax.swing.JFrame {
     private javax.swing.JButton Browse;
     private javax.swing.JLabel admission_02;
     private javax.swing.JLabel bg;
-    private javax.swing.JTextField f_info_dis;
-    private javax.swing.JTextField f_info_name;
-    private javax.swing.JTextField f_info_nid;
-    private javax.swing.JTextField f_info_tha;
+    private javax.swing.JButton clean_1;
+    private javax.swing.JButton clean_2;
+    private javax.swing.JButton clean_3;
+    private javax.swing.JButton clean_4;
     private javax.swing.JLabel home_button_02;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
-    private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton12;
-    private javax.swing.JButton jButton13;
     private javax.swing.JButton jButton14;
     private javax.swing.JButton jButton15;
     private javax.swing.JButton jButton16;
-    private javax.swing.JButton jButton17;
     private javax.swing.JButton jButton18;
     private javax.swing.JButton jButton19;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton20;
-    private javax.swing.JButton jButton21;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
-    private javax.swing.JComboBox<String> jComboBox3;
-    private javax.swing.JComboBox<String> jComboBox4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -865,6 +917,7 @@ public class teacher_home extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -881,32 +934,39 @@ public class teacher_home extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField10;
-    private javax.swing.JTextField jTextField11;
-    private javax.swing.JTextField jTextField12;
-    private javax.swing.JTextField jTextField13;
-    private javax.swing.JTextField jTextField14;
-    private javax.swing.JTextField jTextField15;
-    private javax.swing.JTextField jTextField16;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextField jTextField8;
-    private javax.swing.JTextField jTextField9;
     private javax.swing.JLabel logout_02;
-    private javax.swing.JTextField m_info_dis;
-    private javax.swing.JTextField m_info_name;
-    private javax.swing.JTextField m_info_nid;
-    private javax.swing.JTextField m_info_tha;
+    private javax.swing.JTextField nsid_birthno;
+    private javax.swing.JTextField nsid_dateofbirth;
+    private javax.swing.JTextField nsid_father_district;
+    private javax.swing.JTextField nsid_father_name;
+    private javax.swing.JTextField nsid_father_nidno;
+    private javax.swing.JTextField nsid_father_thana;
+    private javax.swing.JTextField nsid_id;
+    private javax.swing.JTextField nsid_mother_district;
+    private javax.swing.JTextField nsid_mother_name;
+    private javax.swing.JTextField nsid_mother_nidno;
+    private javax.swing.JTextField nsid_mother_thana;
+    private javax.swing.JTextField nsid_name;
     private javax.swing.JLabel registation_02;
     private javax.swing.JLabel routine_02;
-    private javax.swing.JTextField s_info_bn;
-    private javax.swing.JTextField s_info_db;
-    private javax.swing.JTextField s_info_id;
-    private javax.swing.JTextField s_info_name;
     private javax.swing.JLabel schoolresult_02;
+    private javax.swing.JTextField std_class;
+    private javax.swing.JComboBox<String> std_sub_1;
+    private javax.swing.JComboBox<String> std_sub_2;
+    private javax.swing.JComboBox<String> std_sub_3;
+    private javax.swing.JTextField std_sub_res1;
+    private javax.swing.JTextField std_sub_res2;
+    private javax.swing.JTextField std_sub_res3;
+    private javax.swing.JTextField std_sub_restotal;
+    private javax.swing.JTextField student_class_01;
+    private javax.swing.JTextField student_class_02;
+    private javax.swing.JTextField student_id_01;
+    private javax.swing.JTextField student_id_02;
+    private javax.swing.JTextField student_id_03;
+    private javax.swing.JTextField student_name_01;
+    private javax.swing.JTextField student_name_02;
+    private javax.swing.JTextField student_year_01;
+    private javax.swing.JTextField student_year_02;
     private javax.swing.JTabbedPane teacher_panel;
     // End of variables declaration//GEN-END:variables
 }

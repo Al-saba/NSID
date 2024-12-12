@@ -48,37 +48,36 @@ public class govt_home extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jPanel9 = new javax.swing.JPanel();
-        sc_n = new javax.swing.JTextField();
-        sc_id = new javax.swing.JTextField();
-        loc_t = new javax.swing.JTextField();
-        loc_d = new javax.swing.JTextField();
-        loc_v = new javax.swing.JTextField();
-        loc_pc = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        school_name = new javax.swing.JTextField();
+        school_id = new javax.swing.JTextField();
+        school_thana = new javax.swing.JTextField();
+        school_district = new javax.swing.JTextField();
+        school_village = new javax.swing.JTextField();
+        school_password = new javax.swing.JTextField();
+        save = new javax.swing.JButton();
+        clean_1 = new javax.swing.JButton();
         jPanel10 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jPanel8 = new javax.swing.JPanel();
-        exem_rs = new javax.swing.JTextField();
-        exem_year = new javax.swing.JTextField();
-        exem_stid = new javax.swing.JTextField();
-        exem_board = new javax.swing.JTextField();
-        sub_2 = new javax.swing.JComboBox<>();
-        sub_3 = new javax.swing.JComboBox<>();
-        sub_4 = new javax.swing.JComboBox<>();
-        g_exem = new javax.swing.JComboBox<>();
-        sub_1 = new javax.swing.JComboBox<>();
-        mark_4 = new javax.swing.JTextField();
-        total_mark = new javax.swing.JTextField();
-        mark_2 = new javax.swing.JTextField();
-        mark_3 = new javax.swing.JTextField();
-        mark_1 = new javax.swing.JTextField();
-        total_mark1 = new javax.swing.JTextField();
+        govt_examination = new javax.swing.JTextField();
+        govt_year = new javax.swing.JTextField();
+        govt_studentid = new javax.swing.JTextField();
+        govt_board = new javax.swing.JTextField();
+        govt_sub_2 = new javax.swing.JComboBox<>();
+        govt_sub_3 = new javax.swing.JComboBox<>();
+        govt_sub_4 = new javax.swing.JComboBox<>();
+        govt_sub_1 = new javax.swing.JComboBox<>();
+        govt_res_4 = new javax.swing.JTextField();
+        govt_res_total = new javax.swing.JTextField();
+        govt_res_2 = new javax.swing.JTextField();
+        govt_res_3 = new javax.swing.JTextField();
+        govt_res_1 = new javax.swing.JTextField();
+        govt_res_gpa = new javax.swing.JTextField();
         jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
+        govt_res_browes = new javax.swing.JButton();
+        clean_2 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
         jPanel11 = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
@@ -211,44 +210,50 @@ public class govt_home extends javax.swing.JFrame {
         jPanel9.setBackground(new java.awt.Color(232, 230, 217));
         jPanel9.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        sc_n.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
-        jPanel9.add(sc_n, new org.netbeans.lib.awtextra.AbsoluteConstraints(248, 90, 170, 40));
+        school_name.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
+        jPanel9.add(school_name, new org.netbeans.lib.awtextra.AbsoluteConstraints(248, 90, 170, 40));
 
-        sc_id.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
-        jPanel9.add(sc_id, new org.netbeans.lib.awtextra.AbsoluteConstraints(248, 168, 170, 40));
+        school_id.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
+        jPanel9.add(school_id, new org.netbeans.lib.awtextra.AbsoluteConstraints(248, 168, 170, 40));
 
-        loc_t.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
-        jPanel9.add(loc_t, new org.netbeans.lib.awtextra.AbsoluteConstraints(248, 320, 170, 40));
+        school_thana.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
+        jPanel9.add(school_thana, new org.netbeans.lib.awtextra.AbsoluteConstraints(248, 320, 170, 40));
 
-        loc_d.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
-        jPanel9.add(loc_d, new org.netbeans.lib.awtextra.AbsoluteConstraints(248, 397, 170, 40));
+        school_district.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
+        jPanel9.add(school_district, new org.netbeans.lib.awtextra.AbsoluteConstraints(248, 397, 170, 40));
 
-        loc_v.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
-        jPanel9.add(loc_v, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 321, 170, 40));
+        school_village.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
+        jPanel9.add(school_village, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 321, 170, 40));
 
-        loc_pc.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
-        jPanel9.add(loc_pc, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 397, 170, 40));
+        school_password.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
+        jPanel9.add(school_password, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 397, 170, 40));
 
-        jButton1.setBackground(new java.awt.Color(232, 230, 217));
-        jButton1.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 24)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(51, 51, 51));
-        jButton1.setText("Save");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        save.setBackground(new java.awt.Color(232, 230, 217));
+        save.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 24)); // NOI18N
+        save.setForeground(new java.awt.Color(51, 51, 51));
+        save.setText("Save");
+        save.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                saveActionPerformed(evt);
             }
         });
-        jPanel9.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 508, -1, -1));
+        jPanel9.add(save, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 508, -1, -1));
 
-        jButton2.setBackground(new java.awt.Color(232, 230, 217));
-        jButton2.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 24)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(51, 51, 51));
-        jButton2.setText("Clear");
-        jPanel9.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 508, -1, -1));
+        clean_1.setBackground(new java.awt.Color(232, 230, 217));
+        clean_1.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 24)); // NOI18N
+        clean_1.setForeground(new java.awt.Color(51, 51, 51));
+        clean_1.setText("Clear");
+        clean_1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                clean_1ActionPerformed(evt);
+            }
+        });
+        jPanel9.add(clean_1, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 508, -1, -1));
 
         jPanel10.setBackground(new java.awt.Color(232, 230, 217));
 
         jLabel1.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 102, 51));
         jLabel1.setText("Password:");
 
         javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
@@ -296,50 +301,52 @@ public class govt_home extends javax.swing.JFrame {
         jPanel8.setForeground(new java.awt.Color(232, 230, 217));
         jPanel8.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        exem_rs.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
-        jPanel8.add(exem_rs, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 113, 170, 40));
+        govt_examination.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
+        jPanel8.add(govt_examination, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 113, 170, 40));
 
-        exem_year.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
-        jPanel8.add(exem_year, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 189, 170, 40));
+        govt_year.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
+        jPanel8.add(govt_year, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 189, 170, 40));
 
-        exem_stid.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
-        jPanel8.add(exem_stid, new org.netbeans.lib.awtextra.AbsoluteConstraints(618, 191, 170, 40));
+        govt_studentid.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
+        jPanel8.add(govt_studentid, new org.netbeans.lib.awtextra.AbsoluteConstraints(618, 191, 170, 40));
 
-        exem_board.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
-        jPanel8.add(exem_board, new org.netbeans.lib.awtextra.AbsoluteConstraints(617, 114, 170, 40));
+        govt_board.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
+        jPanel8.add(govt_board, new org.netbeans.lib.awtextra.AbsoluteConstraints(617, 114, 170, 40));
 
-        sub_2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--Selection Subject--", "Bangla", "English", "Math", "Islam" }));
-        jPanel8.add(sub_2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 420, 150, 30));
+        govt_sub_2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--Selection Subject--", "Bangla", "English", "Math", "Islam" }));
+        jPanel8.add(govt_sub_2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 420, 150, 30));
 
-        sub_3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--Selection Subject--", "Bangla", "English", "Math", "Islam" }));
-        jPanel8.add(sub_3, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 460, 150, 30));
+        govt_sub_3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--Selection Subject--", "Bangla", "English", "Math", "Islam" }));
+        jPanel8.add(govt_sub_3, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 460, 150, 30));
 
-        sub_4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--Selection Subject--", "Bangla", "English", "Math", "Islam" }));
-        jPanel8.add(sub_4, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 500, 150, 30));
+        govt_sub_4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--Selection Subject--", "Bangla", "English", "Math", "Islam" }));
+        jPanel8.add(govt_sub_4, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 500, 150, 30));
 
-        g_exem.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--Select Exam--", "JSC", "SSC", "HSC" }));
-        jPanel8.add(g_exem, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 340, 150, 30));
-
-        sub_1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--Selection Subject--", "Bangla", "English", "Math", "Islam" }));
-        jPanel8.add(sub_1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 380, 150, 30));
-        jPanel8.add(mark_4, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 500, 90, 30));
-        jPanel8.add(total_mark, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 500, 90, 30));
-        jPanel8.add(mark_2, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 420, 90, 30));
-        jPanel8.add(mark_3, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 460, 90, 30));
-        jPanel8.add(mark_1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 380, 90, 30));
-        jPanel8.add(total_mark1, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 500, 90, 30));
+        govt_sub_1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--Selection Subject--", "Bangla", "English", "Math", "Islam" }));
+        jPanel8.add(govt_sub_1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 380, 150, 30));
+        jPanel8.add(govt_res_4, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 500, 90, 30));
+        jPanel8.add(govt_res_total, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 500, 90, 30));
+        jPanel8.add(govt_res_2, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 420, 90, 30));
+        jPanel8.add(govt_res_3, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 460, 90, 30));
+        jPanel8.add(govt_res_1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 380, 90, 30));
+        jPanel8.add(govt_res_gpa, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 500, 90, 30));
 
         jButton3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jButton3.setText("Edit");
         jPanel8.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 550, -1, -1));
 
-        jButton4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jButton4.setText("Browse");
-        jPanel8.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 340, -1, -1));
+        govt_res_browes.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        govt_res_browes.setText("Browse");
+        jPanel8.add(govt_res_browes, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 340, -1, -1));
 
-        jButton5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jButton5.setText("Clean");
-        jPanel8.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 550, -1, -1));
+        clean_2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        clean_2.setText("Clean");
+        clean_2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                clean_2ActionPerformed(evt);
+            }
+        });
+        jPanel8.add(clean_2, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 550, -1, -1));
 
         jButton6.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jButton6.setText("Save");
@@ -496,26 +503,34 @@ public class govt_home extends javax.swing.JFrame {
         govt_panel_01.setSelectedIndex(3);
     }//GEN-LAST:event_jToggleButton4ActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-         String sch_name = sc_n.getText();
-         String sch_id = sc_id.getText();
-         String loc_th = loc_t.getText();
-         String loc_di = loc_d.getText();
-         String loc_vi = loc_v.getText();
-         String sch_pass = loc_pc.getText();
-                
-        try{
-        Class.forName("com.mysql.jdbc.Driver");
-        Connection con=DriverManager.getConnection("jdbc:mysql://127.0.0.1:3307/nsid","root","root");
-        Statement statement=con.createStatement();
-        String query =("INSERT INTO school_registration (school_name, school_id, school_password, thana, district, village) VALUES ('"+sch_name+"','"+sch_id+"','"+sch_pass+"','"+loc_th+"','"+loc_di+"','"+loc_vi+"')");
-        statement.executeUpdate(query);
-        JOptionPane.showMessageDialog(null,"Save Data");
-       }
-       catch(HeadlessException | ClassNotFoundException | SQLException e){
-           Logger.getLogger(govt_home.class.getName()).log(Level.SEVERE, null, e);
-       } 
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void saveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveActionPerformed
+          
+    }//GEN-LAST:event_saveActionPerformed
+
+    private void clean_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clean_1ActionPerformed
+          school_name.setText("");
+          school_id.setText("");
+          school_thana.setText("");
+          school_district.setText("");
+          school_village.setText("");
+          school_password.setText("");
+    }//GEN-LAST:event_clean_1ActionPerformed
+    private void clean_2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clean_2ActionPerformed
+        govt_examination.setText("");
+        govt_year.setText("");
+        govt_board.setText("");
+        govt_studentid.setText("");
+        govt_sub_1.setSelectedIndex(0);
+        govt_sub_2.setSelectedIndex(0);
+        govt_sub_3.setSelectedIndex(0);
+        govt_sub_4.setSelectedIndex(0);
+        govt_res_1.setText("");
+        govt_res_2.setText("");
+        govt_res_3.setText("");
+        govt_res_4.setText("");
+        govt_res_total.setText("");
+        govt_res_gpa.setText("");
+    }//GEN-LAST:event_clean_2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -554,18 +569,26 @@ public class govt_home extends javax.swing.JFrame {
     private javax.swing.JLabel bg01;
     private javax.swing.JLabel bg02;
     private javax.swing.JLabel bordresult_button_02;
-    private javax.swing.JTextField exem_board;
-    private javax.swing.JTextField exem_rs;
-    private javax.swing.JTextField exem_stid;
-    private javax.swing.JTextField exem_year;
-    private javax.swing.JComboBox<String> g_exem;
+    private javax.swing.JButton clean_1;
+    private javax.swing.JButton clean_2;
+    private javax.swing.JTextField govt_board;
+    private javax.swing.JTextField govt_examination;
     private javax.swing.JTabbedPane govt_panel_01;
+    private javax.swing.JTextField govt_res_1;
+    private javax.swing.JTextField govt_res_2;
+    private javax.swing.JTextField govt_res_3;
+    private javax.swing.JTextField govt_res_4;
+    private javax.swing.JButton govt_res_browes;
+    private javax.swing.JTextField govt_res_gpa;
+    private javax.swing.JTextField govt_res_total;
+    private javax.swing.JTextField govt_studentid;
+    private javax.swing.JComboBox<String> govt_sub_1;
+    private javax.swing.JComboBox<String> govt_sub_2;
+    private javax.swing.JComboBox<String> govt_sub_3;
+    private javax.swing.JComboBox<String> govt_sub_4;
+    private javax.swing.JTextField govt_year;
     private javax.swing.JLabel home_button_02;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
@@ -593,24 +616,15 @@ public class govt_home extends javax.swing.JFrame {
     private javax.swing.JToggleButton jToggleButton3;
     private javax.swing.JToggleButton jToggleButton4;
     private javax.swing.JToggleButton jToggleButton5;
-    private javax.swing.JTextField loc_d;
-    private javax.swing.JTextField loc_pc;
-    private javax.swing.JTextField loc_t;
-    private javax.swing.JTextField loc_v;
     private javax.swing.JLabel logout_button_02;
-    private javax.swing.JTextField mark_1;
-    private javax.swing.JTextField mark_2;
-    private javax.swing.JTextField mark_3;
-    private javax.swing.JTextField mark_4;
     private javax.swing.JLabel notic_button_02;
     private javax.swing.JLabel registation_button_02;
-    private javax.swing.JTextField sc_id;
-    private javax.swing.JTextField sc_n;
-    private javax.swing.JComboBox<String> sub_1;
-    private javax.swing.JComboBox<String> sub_2;
-    private javax.swing.JComboBox<String> sub_3;
-    private javax.swing.JComboBox<String> sub_4;
-    private javax.swing.JTextField total_mark;
-    private javax.swing.JTextField total_mark1;
+    private javax.swing.JButton save;
+    private javax.swing.JTextField school_district;
+    private javax.swing.JTextField school_id;
+    private javax.swing.JTextField school_name;
+    private javax.swing.JTextField school_password;
+    private javax.swing.JTextField school_thana;
+    private javax.swing.JTextField school_village;
     // End of variables declaration//GEN-END:variables
 }
