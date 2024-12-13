@@ -3,10 +3,16 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package Log_IN;
+
 import home.govt_home;
 import java.awt.HeadlessException;
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import javax.swing.JOptionPane;
+
 
 /**
  *
@@ -35,8 +41,9 @@ public class govt_login extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         id01 = new javax.swing.JTextField();
         pass01 = new javax.swing.JPasswordField();
-        log_in01 = new javax.swing.JButton();
+        log_in = new javax.swing.JButton();
         icon01 = new javax.swing.JLabel();
+        show_password = new javax.swing.JCheckBox();
         background = new javax.swing.JLabel();
         login_button_02 = new javax.swing.JLabel();
         icon02 = new javax.swing.JLabel();
@@ -62,22 +69,22 @@ public class govt_login extends javax.swing.JFrame {
         pass01.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel1.add(pass01, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 350, 140, 30));
 
-        log_in01.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Button/login button 09.png"))); // NOI18N
-        log_in01.setContentAreaFilled(false);
-        log_in01.addMouseListener(new java.awt.event.MouseAdapter() {
+        log_in.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Button/login button 09.png"))); // NOI18N
+        log_in.setContentAreaFilled(false);
+        log_in.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                log_in01MouseEntered(evt);
+                log_inMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                log_in01MouseExited(evt);
+                log_inMouseExited(evt);
             }
         });
-        log_in01.addActionListener(new java.awt.event.ActionListener() {
+        log_in.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                log_in01ActionPerformed(evt);
+                log_inActionPerformed(evt);
             }
         });
-        jPanel1.add(log_in01, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 400, -1, -1));
+        jPanel1.add(log_in, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 420, -1, -1));
 
         icon01.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icon04.png"))); // NOI18N
         icon01.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -92,6 +99,14 @@ public class govt_login extends javax.swing.JFrame {
             }
         });
         jPanel1.add(icon01, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 390, -1, -1));
+
+        show_password.setText("Show password");
+        show_password.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                show_passwordActionPerformed(evt);
+            }
+        });
+        jPanel1.add(show_password, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 390, -1, -1));
 
         background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Background/gov_bg.jpg"))); // NOI18N
         jPanel1.add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 791));
@@ -129,39 +144,53 @@ public class govt_login extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_icon01MouseClicked
 
-    private void log_in01MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_log_in01MouseEntered
-       log_in01.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Button/login button 08.png")));
-    }//GEN-LAST:event_log_in01MouseEntered
+    private void log_inMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_log_inMouseEntered
+       log_in.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Button/login button 08.png")));
+    }//GEN-LAST:event_log_inMouseEntered
 
-    private void log_in01MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_log_in01MouseExited
-        log_in01.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Button/login button 09.png")));
-    }//GEN-LAST:event_log_in01MouseExited
+    private void log_inMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_log_inMouseExited
+        log_in.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Button/login button 09.png")));
+    }//GEN-LAST:event_log_inMouseExited
 
-    private void log_in01ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_log_in01ActionPerformed
-       var id=id01.getText();
-       var pass=pass01.getText();
-       
-       try{
-        Class.forName("com.mysql.jdbc.Driver");
-        Connection con=DriverManager.getConnection("jdbc:mysql://127.0.0.1:3307/nsid","root","");
-        Statement stmt=con.createStatement();
-        ResultSet rs=stmt.executeQuery("SELECT * FROM admin where email ='"+id+"' and password='"+pass+"'");
-        if(rs.next()){
-            java.awt.EventQueue.invokeLater(() -> {
-            new govt_home().setVisible(true);
-            dispose();
-        });
-
-        } 
-        else{
-             JOptionPane.showMessageDialog(null,"Incorrect Enter your ID & Password");  
+    private void log_inActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_log_inActionPerformed
+         try {
+        Class.forName("com.mysql.cj.jdbc.Driver");
+        try (Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3307/nsid?zeroDateTimeBehavior=CONVERT_TO_NULL", "root", "")) {
+            String user = id01.getText();
+            String pass = pass01.getText();
+            
+            
+            // Use PreparedStatement to prevent SQL injection
+            String sql = "SELECT * FROM admin WHERE admin_user=? AND admin_pass=?";
+            try (PreparedStatement pstmt = con.prepareStatement(sql)) {
+                pstmt.setString(1, user);
+                pstmt.setString(2, pass);
+                try (ResultSet rs = pstmt.executeQuery()) {
+                    if (rs.next()) {
+                        new govt_home().setVisible(true);
+                        dispose();
+                    } else {
+                        JOptionPane.showMessageDialog(this, "Wrong username or password...");
+                        id01.setText("");
+                        pass01.setText("");
+                    }
+                }
+            }
         }
-       }
-       catch(HeadlessException | ClassNotFoundException | SQLException e){
-           System.out.print(e);
-       } 
-       
-    }//GEN-LAST:event_log_in01ActionPerformed
+    } catch (HeadlessException | ClassNotFoundException | SQLException e) { // Helps to identify errors
+        // Helps to identify errors
+        JOptionPane.showMessageDialog(this, "Error: " + e.getMessage());
+    }
+
+    }//GEN-LAST:event_log_inActionPerformed
+
+    private void show_passwordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_show_passwordActionPerformed
+    if (show_password.isSelected()) {
+        pass01.setEchoChar((char) 0); // Show password
+    } else {
+        pass01.setEchoChar('*'); // Hide password
+    }
+    }//GEN-LAST:event_show_passwordActionPerformed
 
     /**
      * @param args the command line arguments
@@ -204,8 +233,9 @@ public class govt_login extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JButton log_in01;
+    private javax.swing.JButton log_in;
     private javax.swing.JLabel login_button_02;
     private javax.swing.JPasswordField pass01;
+    private javax.swing.JCheckBox show_password;
     // End of variables declaration//GEN-END:variables
 }

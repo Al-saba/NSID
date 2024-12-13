@@ -6,10 +6,14 @@ package home;
 
 import Log_IN.govt_login;
 import java.awt.HeadlessException;
-import java.sql.*;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import javax.swing.JOptionPane;
+
 
 
 /**
@@ -65,10 +69,6 @@ public class govt_home extends javax.swing.JFrame {
         govt_year = new javax.swing.JTextField();
         govt_studentid = new javax.swing.JTextField();
         govt_board = new javax.swing.JTextField();
-        govt_sub_2 = new javax.swing.JComboBox<>();
-        govt_sub_3 = new javax.swing.JComboBox<>();
-        govt_sub_4 = new javax.swing.JComboBox<>();
-        govt_sub_1 = new javax.swing.JComboBox<>();
         govt_res_4 = new javax.swing.JTextField();
         govt_res_total = new javax.swing.JTextField();
         govt_res_2 = new javax.swing.JTextField();
@@ -78,8 +78,13 @@ public class govt_home extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
         govt_res_browes = new javax.swing.JButton();
         clean_2 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
+        save1 = new javax.swing.JButton();
+        search = new javax.swing.JButton();
         jPanel11 = new javax.swing.JPanel();
+        govt_sub_4 = new javax.swing.JTextField();
+        govt_sub_1 = new javax.swing.JTextField();
+        govt_sub_2 = new javax.swing.JTextField();
+        govt_sub_3 = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
@@ -312,18 +317,6 @@ public class govt_home extends javax.swing.JFrame {
 
         govt_board.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
         jPanel8.add(govt_board, new org.netbeans.lib.awtextra.AbsoluteConstraints(617, 114, 170, 40));
-
-        govt_sub_2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--Selection Subject--", "Bangla", "English", "Math", "Islam" }));
-        jPanel8.add(govt_sub_2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 420, 150, 30));
-
-        govt_sub_3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--Selection Subject--", "Bangla", "English", "Math", "Islam" }));
-        jPanel8.add(govt_sub_3, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 460, 150, 30));
-
-        govt_sub_4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--Selection Subject--", "Bangla", "English", "Math", "Islam" }));
-        jPanel8.add(govt_sub_4, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 500, 150, 30));
-
-        govt_sub_1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--Selection Subject--", "Bangla", "English", "Math", "Islam" }));
-        jPanel8.add(govt_sub_1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 380, 150, 30));
         jPanel8.add(govt_res_4, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 500, 90, 30));
         jPanel8.add(govt_res_total, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 500, 90, 30));
         jPanel8.add(govt_res_2, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 420, 90, 30));
@@ -348,9 +341,28 @@ public class govt_home extends javax.swing.JFrame {
         });
         jPanel8.add(clean_2, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 550, -1, -1));
 
-        jButton6.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jButton6.setText("Save");
-        jPanel8.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 550, -1, -1));
+        save1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        save1.setText("Save");
+        save1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                save1MouseClicked(evt);
+            }
+        });
+        save1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                save1ActionPerformed(evt);
+            }
+        });
+        jPanel8.add(save1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 550, -1, -1));
+
+        search.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        search.setText("Search");
+        search.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                searchActionPerformed(evt);
+            }
+        });
+        jPanel8.add(search, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 250, -1, -1));
 
         javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
         jPanel11.setLayout(jPanel11Layout);
@@ -364,6 +376,18 @@ public class govt_home extends javax.swing.JFrame {
         );
 
         jPanel8.add(jPanel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 370, 220, 110));
+
+        govt_sub_4.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jPanel8.add(govt_sub_4, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 500, 150, 30));
+
+        govt_sub_1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jPanel8.add(govt_sub_1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 380, 150, 30));
+
+        govt_sub_2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jPanel8.add(govt_sub_2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 420, 150, 30));
+
+        govt_sub_3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jPanel8.add(govt_sub_3, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 460, 150, 30));
 
         jLabel9.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel9.setText("GPA");
@@ -441,89 +465,96 @@ public class govt_home extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
     private void jToggleButton1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jToggleButton1MouseEntered
         jToggleButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Button/Home button 02.png")));
     }//GEN-LAST:event_jToggleButton1MouseEntered
-
     private void jToggleButton1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jToggleButton1MouseExited
       jToggleButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Button/Home button 01.png")));
     }//GEN-LAST:event_jToggleButton1MouseExited
-
     private void jToggleButton5MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jToggleButton5MouseEntered
       jToggleButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Button/registation button 02.png")));
     }//GEN-LAST:event_jToggleButton5MouseEntered
-
     private void jToggleButton5MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jToggleButton5MouseExited
       jToggleButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Button/registation button 01.png")));
     }//GEN-LAST:event_jToggleButton5MouseExited
-
     private void jToggleButton2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jToggleButton2MouseEntered
       jToggleButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Button/Board result button 02.png")));
     }//GEN-LAST:event_jToggleButton2MouseEntered
-
     private void jToggleButton2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jToggleButton2MouseExited
       jToggleButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Button/Board result button 01.png")));
     }//GEN-LAST:event_jToggleButton2MouseExited
-
     private void jToggleButton4MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jToggleButton4MouseEntered
       jToggleButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Button/Notice button 02.png")));
     }//GEN-LAST:event_jToggleButton4MouseEntered
-
     private void jToggleButton4MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jToggleButton4MouseExited
       jToggleButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Button/Notice button 01.png")));
     }//GEN-LAST:event_jToggleButton4MouseExited
-
     private void jToggleButton3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jToggleButton3MouseEntered
       jToggleButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Button/Log out button 02.png")));
     }//GEN-LAST:event_jToggleButton3MouseEntered
-
     private void jToggleButton3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jToggleButton3MouseExited
       jToggleButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Button/Log out button 01.png")));
     }//GEN-LAST:event_jToggleButton3MouseExited
-
     private void jToggleButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton3ActionPerformed
         new govt_login().setVisible(true);
         dispose();
     }//GEN-LAST:event_jToggleButton3ActionPerformed
-
     private void jToggleButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton5ActionPerformed
        govt_panel_01.setSelectedIndex(1);
     }//GEN-LAST:event_jToggleButton5ActionPerformed
-
     private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
         govt_panel_01.setSelectedIndex(0);
     }//GEN-LAST:event_jToggleButton1ActionPerformed
-
     private void jToggleButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton2ActionPerformed
         govt_panel_01.setSelectedIndex(2);
     }//GEN-LAST:event_jToggleButton2ActionPerformed
-
     private void jToggleButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton4ActionPerformed
         govt_panel_01.setSelectedIndex(3);
     }//GEN-LAST:event_jToggleButton4ActionPerformed
-
     private void saveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveActionPerformed
-          
+        try {
+        Class.forName("com.mysql.cj.jdbc.Driver");
+        
+        try (Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3307/nsid?zeroDateTimeBehavior=CONVERT_TO_NULL", "root", "")) {
+        Statement statement=con.createStatement();
+        String s_name      =  school_name.getText();
+        String s_id        =  school_id.getText();
+        String s_thana     =  school_thana.getText();
+        String s_district  =  school_district.getText();
+        String s_village   =  school_village.getText();
+        String s_password  =  school_password.getText();
+
+        
+        String sql;
+            sql = ("INSERT INTO registration (school_name,school_id,school_village,school_thana,school_district,school_pass) VALUES ('"+s_name+"','"+s_id+"' ,'"+s_village+"','"+s_thana+"', '"+s_district+"','"+s_password+"')");
+            statement.executeUpdate(sql);
+        JOptionPane.showMessageDialog(null,"Save Data");
+        }}
+        catch (HeadlessException | ClassNotFoundException | SQLException e) { // Helps to identify errors
+        // Helps to identify errors
+        JOptionPane.showMessageDialog(this, "Error: " + e.getMessage());
+    }
     }//GEN-LAST:event_saveActionPerformed
 
+    
+    
     private void clean_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clean_1ActionPerformed
-          school_name.setText("");
-          school_id.setText("");
-          school_thana.setText("");
-          school_district.setText("");
-          school_village.setText("");
-          school_password.setText("");
+         school_name.setText("");
+         school_id.setText("");
+         school_thana.setText("");
+         school_district.setText("");
+         school_village.setText("");
+         school_password.setText("");
     }//GEN-LAST:event_clean_1ActionPerformed
     private void clean_2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clean_2ActionPerformed
         govt_examination.setText("");
         govt_year.setText("");
         govt_board.setText("");
         govt_studentid.setText("");
-        govt_sub_1.setSelectedIndex(0);
-        govt_sub_2.setSelectedIndex(0);
-        govt_sub_3.setSelectedIndex(0);
-        govt_sub_4.setSelectedIndex(0);
+        govt_sub_1.setText("");
+        govt_sub_2.setText("");
+        govt_sub_3.setText("");
+        govt_sub_4.setText("");
         govt_res_1.setText("");
         govt_res_2.setText("");
         govt_res_3.setText("");
@@ -531,6 +562,74 @@ public class govt_home extends javax.swing.JFrame {
         govt_res_total.setText("");
         govt_res_gpa.setText("");
     }//GEN-LAST:event_clean_2ActionPerformed
+
+    private void searchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchActionPerformed
+        try {
+        Class.forName("com.mysql.cj.jdbc.Driver");
+        try (Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3307/nsid?zeroDateTimeBehavior=CONVERT_TO_NULL", "root", "")) {
+            String u1 = govt_studentid.getText();
+            String u2 = govt_examination.getText();
+            String u3 = govt_year.getText();
+            String u4 = govt_board.getText();
+
+            String sql = "SELECT * FROM board_admission WHERE s_id=? and s_exam=? and s_year=? and s_board=?";
+            try (PreparedStatement pstmt = con.prepareStatement(sql)) {
+                pstmt.setString(1, u1);
+                pstmt.setString(2, u2);
+                pstmt.setString(3, u3);
+                pstmt.setString(4, u4);
+                
+                
+                try (ResultSet rs = pstmt.executeQuery()) {
+                    if (rs.next()) {
+                         JOptionPane.showMessageDialog(this, "Found your ID");
+                    } else {
+                        JOptionPane.showMessageDialog(this, "Not Found your ID");
+                  }
+                }
+            }
+        }
+    } catch (HeadlessException | ClassNotFoundException | SQLException e) { // Helps to identify errors
+        // Helps to identify errors
+        JOptionPane.showMessageDialog(this, "Error: " + e.getMessage());
+    }
+        // TODO add your handling code here:
+    }//GEN-LAST:event_searchActionPerformed
+
+    private void save1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_save1ActionPerformed
+         try {
+        Class.forName("com.mysql.cj.jdbc.Driver");
+        
+        try (Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3307/nsid?zeroDateTimeBehavior=CONVERT_TO_NULL", "root", "")) {
+        Statement statement=con.createStatement();
+        String sub_1      =  govt_sub_1.getText();
+        String sub_2      =  govt_sub_2.getText();
+        String sub_3      =  govt_sub_3.getText();
+        String sub_4      =  govt_sub_4.getText();
+        String res_1      =  govt_res_1.getText();
+        String res_2      =  govt_res_2.getText();
+        String res_3      =  govt_res_3.getText();
+        String res_4      =  govt_res_4.getText();
+        String res_total  =  govt_res_total.getText();
+        String res_gpa    =  govt_res_gpa.getText();
+        String st_id    =  govt_studentid.getText();
+        
+        //String res_browes =  govt_res_browes.getText();
+        
+        String sql;
+            sql = ("INSERT INTO boord_result(b_sub_name01, b_sub_name02, b_sub_name03, b_sub_name04, b_sub_result01, b_sub_result02, b_sub_result03, b_sub_result04, b_total_result, b_gpa,st_id) VALUES ('"+sub_1+"','"+sub_2+"','"+sub_3+"','"+sub_4+"','"+res_1+"','"+res_2+"','"+res_3+"','"+res_4+"','"+res_total+"','"+res_gpa+"','"+st_id+"')");
+            statement.executeUpdate(sql);
+        JOptionPane.showMessageDialog(null,"Save Data");
+        }}
+        catch (HeadlessException | ClassNotFoundException | SQLException e) { // Helps to identify errors
+        // Helps to identify errors
+        JOptionPane.showMessageDialog(this, "Error: " + e.getMessage());
+    } 
+    }//GEN-LAST:event_save1ActionPerformed
+
+    private void save1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_save1MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_save1MouseClicked
 
     /**
      * @param args the command line arguments
@@ -582,14 +681,13 @@ public class govt_home extends javax.swing.JFrame {
     private javax.swing.JTextField govt_res_gpa;
     private javax.swing.JTextField govt_res_total;
     private javax.swing.JTextField govt_studentid;
-    private javax.swing.JComboBox<String> govt_sub_1;
-    private javax.swing.JComboBox<String> govt_sub_2;
-    private javax.swing.JComboBox<String> govt_sub_3;
-    private javax.swing.JComboBox<String> govt_sub_4;
+    private javax.swing.JTextField govt_sub_1;
+    private javax.swing.JTextField govt_sub_2;
+    private javax.swing.JTextField govt_sub_3;
+    private javax.swing.JTextField govt_sub_4;
     private javax.swing.JTextField govt_year;
     private javax.swing.JLabel home_button_02;
     private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton6;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -620,11 +718,13 @@ public class govt_home extends javax.swing.JFrame {
     private javax.swing.JLabel notic_button_02;
     private javax.swing.JLabel registation_button_02;
     private javax.swing.JButton save;
+    public javax.swing.JButton save1;
     private javax.swing.JTextField school_district;
     private javax.swing.JTextField school_id;
     private javax.swing.JTextField school_name;
     private javax.swing.JTextField school_password;
     private javax.swing.JTextField school_thana;
     private javax.swing.JTextField school_village;
+    private javax.swing.JButton search;
     // End of variables declaration//GEN-END:variables
 }

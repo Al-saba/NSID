@@ -32,8 +32,9 @@ public class teacher_login extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         id_user = new javax.swing.JTextField();
         pass_user = new javax.swing.JPasswordField();
-        jButton1 = new javax.swing.JButton();
+        login = new javax.swing.JButton();
         icon_01 = new javax.swing.JLabel();
+        show_password = new javax.swing.JCheckBox();
         background = new javax.swing.JLabel();
         login_button_02 = new javax.swing.JLabel();
         icon_02 = new javax.swing.JLabel();
@@ -53,22 +54,22 @@ public class teacher_login extends javax.swing.JFrame {
         pass_user.setBorder(null);
         jPanel1.add(pass_user, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 459, 290, 40));
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Button/login button 07.png"))); // NOI18N
-        jButton1.setContentAreaFilled(false);
-        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+        login.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Button/login button 07.png"))); // NOI18N
+        login.setContentAreaFilled(false);
+        login.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jButton1MouseEntered(evt);
+                loginMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                jButton1MouseExited(evt);
+                loginMouseExited(evt);
             }
         });
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        login.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                loginActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(619, 521, -1, -1));
+        jPanel1.add(login, new org.netbeans.lib.awtextra.AbsoluteConstraints(619, 521, -1, -1));
 
         icon_01.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icon04.png"))); // NOI18N
         icon_01.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -83,6 +84,14 @@ public class teacher_login extends javax.swing.JFrame {
             }
         });
         jPanel1.add(icon_01, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 570, -1, -1));
+
+        show_password.setText("Show password");
+        show_password.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                show_passwordActionPerformed(evt);
+            }
+        });
+        jPanel1.add(show_password, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 520, -1, -1));
 
         background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Background/teacher login.png"))); // NOI18N
         jPanel1.add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -120,39 +129,53 @@ public class teacher_login extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_icon_01MouseClicked
 
-    private void jButton1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseEntered
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Button/login button 06.png")));
-    }//GEN-LAST:event_jButton1MouseEntered
+    private void loginMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginMouseEntered
+        login.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Button/login button 06.png")));
+    }//GEN-LAST:event_loginMouseEntered
 
-    private void jButton1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseExited
-       jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Button/login button 07.png")));
-    }//GEN-LAST:event_jButton1MouseExited
+    private void loginMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginMouseExited
+       login.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Button/login button 07.png")));
+    }//GEN-LAST:event_loginMouseExited
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-       var id1=id_user.getText();
-       var pass1=pass_user.getText();
-        
-        try{
-        Class.forName("com.mysql.jdbc.Driver");
-        Connection con=DriverManager.getConnection("jdbc:mysql://127.0.0.1:3307/nsid","root","");
-        Statement stmt=con.createStatement();
-        ResultSet rsr;
-            rsr = stmt.executeQuery("SELECT * FROM school_registration where school_id ='"+id1+"' and school_id='"+pass1+"'");
-        if(rsr.next()){
-            java.awt.EventQueue.invokeLater(() -> {
-            new teacher_home().setVisible(true);
-            dispose();
-        });
-
-        } 
-        else{
-             JOptionPane.showMessageDialog(null,"Incorrect Enter your ID & Password");  
+    private void loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginActionPerformed
+         try {
+        Class.forName("com.mysql.cj.jdbc.Driver");
+        try (Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3307/nsid?zeroDateTimeBehavior=CONVERT_TO_NULL", "root", "")) {
+            String user = id_user.getText();
+            String pass = pass_user.getText();
+            
+            
+            // Use PreparedStatement to prevent SQL injection
+            String sql = "SELECT * FROM registration WHERE school_id=? AND school_pass=?";
+            try (PreparedStatement pstmt = con.prepareStatement(sql)) {
+                pstmt.setString(1, user);
+                pstmt.setString(2, pass);
+                try (ResultSet rs = pstmt.executeQuery()) {
+                    if (rs.next()) {
+                        new teacher_home().setVisible(true);
+                        dispose();
+                    } else {
+                        JOptionPane.showMessageDialog(this, "Wrong username or password...");
+                        id_user.setText("");
+                        pass_user.setText("");
+                    }
+                }
+            }
         }
-       }
-       catch(HeadlessException | ClassNotFoundException | SQLException e){
-           System.out.print(e);
-       } 
-    }//GEN-LAST:event_jButton1ActionPerformed
+    } catch (HeadlessException | ClassNotFoundException | SQLException e) { // Helps to identify errors
+        // Helps to identify errors
+        JOptionPane.showMessageDialog(this, "Error: " + e.getMessage());
+    }
+
+    }//GEN-LAST:event_loginActionPerformed
+
+    private void show_passwordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_show_passwordActionPerformed
+     if (show_password.isSelected()) {
+        pass_user.setEchoChar((char) 0); // Show password
+    } else {
+        pass_user.setEchoChar('*'); // Hide password
+    }  
+    }//GEN-LAST:event_show_passwordActionPerformed
 
     /**
      * @param args the command line arguments
@@ -192,9 +215,10 @@ public class teacher_login extends javax.swing.JFrame {
     private javax.swing.JLabel icon_01;
     private javax.swing.JLabel icon_02;
     private javax.swing.JTextField id_user;
-    private javax.swing.JButton jButton1;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JButton login;
     private javax.swing.JLabel login_button_02;
     private javax.swing.JPasswordField pass_user;
+    private javax.swing.JCheckBox show_password;
     // End of variables declaration//GEN-END:variables
 }
